@@ -6,7 +6,6 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.filename)?;
 
     let results = if config.case_sensitive {
-        println!("{}", config.case_sensitive);
         search(&config.query, &contents)
     } else {
         search_case_insensitive(&config.query, &contents)
